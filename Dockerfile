@@ -84,8 +84,8 @@ RUN pip install --upgrade pip
 RUN pip install wheel cython
 
 # build tools from other repos
-ADD build/opt-build.sh build/
-ADD build/libInstall.R build/
+COPY build/opt-build.sh build/
+COPY build/libInstall.R build/
 RUN bash build/opt-build.sh $OPT
 
 
@@ -141,7 +141,7 @@ ENV R_LIBS_USER $R_LIBS
 #Setup the correct R libs directories
 RUN mkdir -p $MPU_OPT
 COPY --from=builder $MPU_OPT $MPU_OPT
-
+COPY fix/filter_telomere_reads.py /opt/mpu/lib/python2.7/site-packages/telomerehunter/
 # ## USER CONFIGURATION
 RUN adduser --disabled-password --gecos '' ubuntu && chsh -s /bin/bash && mkdir -p /home/ubuntu
 

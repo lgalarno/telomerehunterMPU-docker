@@ -26,7 +26,7 @@ You can build the images locally from this GitHub repository. Note that building
 
 * git clone git@github.com:lgalarno/telomerehunterMPU-docker.git
 
-* cd telomerehunterMPU
+* cd cd telomerehunterMPU-docker
 
 * docker build -t telomerehunter .
 
@@ -45,7 +45,7 @@ You can build the images locally from this GitHub repository. Note that building
 
 ## Notes ##
 
-* TUMOR_BAM : By the authors choice, the samples are labelled "tumor and control" in the results. This is hardcoded by desing and cannot be changed. However, any treatment can in sss be analyzed byt telomerehunter. 
+* TUMOR_BAM : By the authors choice, the samples are labelled "tumor and control" in the results. This is hardcoded by desing and cannot be changed. However, any treatment can in principle be analyzed by TelomereHunter. 
 * PROJECT : A project may often contain one control and many treatments (different samples from the same tumor, different drugs or physical treatment, and time lapse). You may want to use the same RESULT_DIRECTORY with different PROJECT folders for comparisons with the same control, for instance. The results folder structure will then be:
 ```bash
 RESULT_DIRECTORY
