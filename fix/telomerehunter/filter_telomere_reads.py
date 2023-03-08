@@ -207,6 +207,15 @@ def filter_telomere_reads(bam_file, band_file, out_dir, pid, sample, repeat_thre
 			read_start_pos = read.pos
 			
 			# check if read is in new band
+
+			# Problematic when using custom genome
+
+			# while read_start_pos > chromosomeLsEnd[i] and i <= len(chromosomeLsEnd):
+			#    try:
+    		# 		i += 1
+    		# 		band = chromosomeLsBand[i]
+    		# 		spectrumTemp = spectrum_list[chromosome][band]
+
 # 			while read_start_pos > chromosomeLsEnd[i] and i <= len(chromosomeLsEnd):
 # 			   try:
 #     				i += 1
