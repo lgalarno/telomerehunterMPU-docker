@@ -8,6 +8,8 @@ pid = commandArgs[6]
 out_dir = paste0(commandArgs[7], "/", pid, "/")
 plot_file_format = commandArgs[8]
 
+library(ggplot2, quietly=TRUE, warn.conflicts=FALSE)
+
 if (plot_file_format=="both"){
   plot_file_format=c("pdf", "png")
 }

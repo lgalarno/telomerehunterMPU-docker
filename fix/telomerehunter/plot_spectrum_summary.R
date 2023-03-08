@@ -35,6 +35,7 @@ library(reshape2, quietly=TRUE, warn.conflicts=FALSE)
 library(dplyr, quietly=TRUE, warn.conflicts=FALSE)
 library(cowplot, quietly=TRUE, warn.conflicts=FALSE)
 library(RColorBrewer, quietly=TRUE, warn.conflicts=FALSE)
+library(ggplot2, quietly=TRUE, warn.conflicts=FALSE)
 
 # source(file.path(pipeline_dir, "/functions_for_plots.R"))
 

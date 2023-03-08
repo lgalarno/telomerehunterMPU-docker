@@ -31,6 +31,7 @@ plot_file_format = commandArgs[11]
 gc_lower_limit = as.numeric(commandArgs[12])
 gc_upper_limit = as.numeric(commandArgs[13])
 
+library(ggplot2, quietly=TRUE, warn.conflicts=FALSE)
 library(cowplot, quietly=TRUE, warn.conflicts=FALSE)
 library(dplyr, quietly=TRUE, warn.conflicts=FALSE)
 library(RColorBrewer, quietly=TRUE, warn.conflicts=FALSE)

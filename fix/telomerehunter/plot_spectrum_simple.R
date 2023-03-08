@@ -25,6 +25,8 @@ if (plot_file_format=="both"){
   plot_file_format=c("pdf", "png")
 }
 
+library(ggplot2, quietly=TRUE, warn.conflicts=FALSE)
+
 source(file.path(pipeline_dir, "/functions_for_plots.R"))
 
 

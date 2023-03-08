@@ -207,11 +207,17 @@ def filter_telomere_reads(bam_file, band_file, out_dir, pid, sample, repeat_thre
 			read_start_pos = read.pos
 			
 			# check if read is in new band
-			while read_start_pos > chromosomeLsEnd[i] and i <= len(chromosomeLsEnd) :
-				i += 1
-				band = chromosomeLsBand[i]
-				spectrumTemp = spectrum_list[chromosome][band]
-			
+# 			while read_start_pos > chromosomeLsEnd[i] and i <= len(chromosomeLsEnd):
+# 			   try:
+#     				i += 1
+#     				band = chromosomeLsBand[i]
+#     				spectrumTemp = spectrum_list[chromosome][band]
+# 			   except:
+#     				print ""
+#     				print "band : " + band
+#     				print "chromosome : " + chromosome
+#     				print " i =  : " + str(i)
+#     				print "read_start_pos : " + str(read_start_pos)
 
 			spectrumTemp2 = spectrumTemp
 

@@ -28,6 +28,7 @@ main_path = commandArgs[5]
 pid = commandArgs[6]
 plot_file_format = commandArgs[7]
 
+library(ggplot2, quietly=TRUE, warn.conflicts=FALSE)
 library(cowplot, quietly=TRUE, warn.conflicts=FALSE)
 library(dplyr, quietly=TRUE, warn.conflicts=FALSE)
 library(reshape2, quietly=TRUE, warn.conflicts=FALSE)

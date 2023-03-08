@@ -52,7 +52,6 @@ if (plot_file_format=="all"){
 
 #------------------------------------------------------------------------------------------------------------------------
 
-library(ggplot2, quietly=TRUE, warn.conflicts=FALSE)
 library(reshape2, quietly=TRUE, warn.conflicts=FALSE)
 library(grid, quietly=TRUE, warn.conflicts=FALSE)
 library(gridExtra, quietly=TRUE, warn.conflicts=FALSE)

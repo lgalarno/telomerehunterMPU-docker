@@ -30,6 +30,7 @@ gc_upper_limit = as.numeric(commandArgs[10])
 
 library(cowplot, quietly=TRUE, warn.conflicts=FALSE)
 library(reshape2, quietly=TRUE, warn.conflicts=FALSE)
+library(ggplot2, quietly=TRUE, warn.conflicts=FALSE)
 
 #source(file.path(pipeline_dir, "functions_for_plots.R"))
 
