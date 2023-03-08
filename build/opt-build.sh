@@ -31,7 +31,7 @@ pip install --prefix=$INST_PATH pysam==$VER_PYSAM PyPDF2==$VER_PYPDF2 telomerehu
 # Check R is installed properly
 R --version
 
-# Install samtools and hts-lib
+# # Install samtools and hts-lib
 cd $INST_PATH
 wget https://github.com/samtools/htslib/releases/download/${VER_HTSLIB}/htslib-${VER_HTSLIB}.tar.bz2
 tar -vxjf htslib-${VER_HTSLIB}.tar.bz2

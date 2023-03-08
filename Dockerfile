@@ -141,7 +141,7 @@ ENV R_LIBS_USER $R_LIBS
 #Setup the correct R libs directories
 RUN mkdir -p $MPU_OPT
 COPY --from=builder $MPU_OPT $MPU_OPT
-COPY fix/filter_telomere_reads.py /opt/mpu/lib/python2.7/site-packages/telomerehunter/
+COPY fix/telomerehunter /opt/mpu/lib/python2.7/site-packages/
 # ## USER CONFIGURATION
 RUN adduser --disabled-password --gecos '' ubuntu && chsh -s /bin/bash && mkdir -p /home/ubuntu
 

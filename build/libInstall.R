@@ -23,25 +23,33 @@ ipak <- function(pkg){
 
 install.packages("BiocManager")
 BiocManager::install("biocLite")
-install.packages("devtools")
+# install.packages("devtools")
 
-library(devtools)
-options(download.file.method = "auto")
+# library(devtools)
+
+install.packages("ggplot2")
+install.packages("reshape2")
+install.packages("gridExtra")
+install.packages("RColorBrewer")
+install.packages("cowplot")
+install.packages("svglite")
+install.packages("dplyr")
+# options(download.file.method = "auto")
 
 # if ( version$major > 3 || ( version$major == 3 && version$minor >= 2 )) {
 #   ipak(c("stringi"))
 # } else {
 #   install.packages(stringi_for_legacyR, repos=NULL, type="source")
 # }
+# install.packages("BiocManager")
 
-
-install_version("ggplot2", version = "2.1.0")
-install_version("reshape2", version = "1.4.1")
-install_version("gridExtra", version = "2.2.1")
-install_version("RColorBrewer", version = "1.1-2")
-install_version("cowplot", version = "0.9.2")
-install_version("svglite", version = "1.2.1")
-install_version("dplyr", version = "1.0.2")
+# install_version("ggplot2", version = "2.1.0")
+# install_version("reshape2", version = "1.4.1")
+# install_version("gridExtra", version = "2.2.1")
+# install_version("RColorBrewer", version = "1.1-2")
+# install_version("cowplot", version = "0.9.2")
+# install_version("svglite", version = "1.2.1")
+# install_version("dplyr", version = "1.0.2")
 # ggplot2 2.1.0
 # reshape2 1.4.1
 # gridExtra 2.2.1
