@@ -141,4 +141,4 @@ temp_dir = paste0(plot_dir, "/temp")
 if (!(file.exists(temp_dir))){dir.create(temp_dir, recursive=TRUE)}
 save(p_hist, file = paste0(temp_dir, "/", pid, "_hist_telomere_repeats_per_intratelomeric_read.rds"))
 
-remove = file.remove("Rplots.pdf")
+# remove = file.remove("Rplots.pdf")

@@ -78,7 +78,7 @@ p_counts = ggplot(counts, aes(pattern, counts)) +
   #theme_bw() +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
   #scale_fill_manual(values=col_repeat_types[unique(counts$pattern)], na.value="grey27", guide=FALSE) +
-  scale_fill_manual(values=col_repeat_types, na.value="grey27", guide=FALSE) +
+  scale_fill_manual(values=col_repeat_types, na.value="grey27", guide="none") +
   scale_alpha_manual(values=c(1, 0.3)) +
   theme(axis.title.x = element_blank()) +
   ylab("Raw singleton counts") +
@@ -102,7 +102,7 @@ p_singletons_norm = ggplot(counts_norm, aes(pattern, counts_norm)) +
   geom_bar(aes(fill=pattern, alpha=sample), stat="identity", position = "dodge", width=0.5) +
   #theme_bw() +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
-  scale_fill_manual(values=col_repeat_types, na.value="grey27", guide=FALSE) +
+  scale_fill_manual(values=col_repeat_types, na.value="grey27", guide="none") +
   #scale_fill_manual(values=col_repeat_types[unique(counts$pattern)], na.value="grey27", guide=FALSE) +
   scale_alpha_manual(values=c(1, 0.3)) +
   theme(axis.title.x = element_blank()) +
@@ -154,12 +154,12 @@ if(all(is.na(singletons$singleton_count_log2_ratio))){
   
   p_singleton_log2 = ggplot(singletons, aes(pattern, singleton_count_log2_ratio_norm)) +
     geom_hline(aes(yintercept = unique(singletons$tel_content_log2_ratio), color="expected log2 ratio (= telomere content log2 ratio)"), 
-               linetype="dotted", size=1)+
+               linetype="dotted", linewidth=1)+
     scale_color_manual(values="darkgrey") +
     theme(legend.position="top", legend.justification = "left") +
     theme(legend.title = element_blank()) +
     geom_bar(aes(fill=pattern), stat="identity") +
-    scale_fill_manual(values=col_repeat_types, na.value="grey50", guide=FALSE) +
+    scale_fill_manual(values=col_repeat_types, na.value="grey50", guide="none") +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
     theme(axis.title.x = element_blank()) +
     ylab("Normalized singleton count tumor/control (log2)") +
@@ -188,7 +188,7 @@ if(all(is.na(singletons$singleton_count_log2_ratio))){
   
   p_distance = ggplot(singletons, aes(pattern, distance_to_expected_singleton_log2_ratio, fill=pattern)) +
     geom_bar(stat="identity") +
-    scale_fill_manual(values=col_repeat_types, na.value="grey50", guide=FALSE) +
+    scale_fill_manual(values=col_repeat_types, na.value="grey50", guide="none") +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
     theme(axis.title.x = element_blank()) +
     ylab("Distance to expected singleton count\n(norm. singleton log2 ratio - tel. content log2 ratio)") +
@@ -218,7 +218,7 @@ if(all(is.na(singletons$singleton_count_log2_ratio))){
 
 
 
-remove = file.remove("Rplots.pdf")
+# remove = file.remove("Rplots.pdf")
 
 
 

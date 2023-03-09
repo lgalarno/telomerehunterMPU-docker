@@ -26,6 +26,7 @@ echo $INST_PATH
 # get current directory
 INIT_DIR=`pwd`
 
+#TODO install telomerehunter as a local package instead of copying the fixed files
 pip install --prefix=$INST_PATH pysam==$VER_PYSAM PyPDF2==$VER_PYPDF2 telomerehunter==$VER_TELOMEREHUNTER
 #
 # Check R is installed properly

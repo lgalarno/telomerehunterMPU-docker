@@ -129,4 +129,4 @@ for (plot_type in plot_file_format){
   ggsave(paste0(plot_file_prefix, ".", plot_type), plot, width = 10, height = 5)
 }
 
-remove = file.remove("Rplots.pdf")
+# remove = file.remove("Rplots.pdf")

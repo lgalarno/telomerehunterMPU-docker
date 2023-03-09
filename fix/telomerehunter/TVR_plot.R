@@ -100,7 +100,7 @@ p_TVR_counts = table_norm_by_intratel %>%
   ggplot(aes(Pattern, count_norm_by_intratel_reads, alpha=sample, fill=Pattern)) +
   geom_bar(stat="identity", position="dodge") +
   scale_alpha_manual(values = c(1, 0.25)) +
-  scale_fill_manual(values = col_repeat_types_plot, guide = FALSE) +
+  scale_fill_manual(values = col_repeat_types_plot, guide = "none") +
   theme(legend.position="top") +
   theme(legend.title=element_blank()) +
   theme(axis.title.x = element_blank()) +
@@ -140,7 +140,7 @@ if(!is.na(table_merged_filter$log2_ratio_count_norm_by_intratel_reads)[1]){
   
   p_TVR_log2 = ggplot(table_merged_filter, aes(Pattern, log2_ratio_count_norm_by_intratel_reads, fill=Pattern)) +
     geom_bar(stat="identity") +
-    scale_fill_manual(values = col_repeat_types_log2, guide=FALSE) +
+    scale_fill_manual(values = col_repeat_types_log2, guide="none") +
     theme(axis.title.x = element_blank()) +
     theme(axis.text.x = element_text(angle = 90, vjust=0.5, hjust = 1)) +  # rotate x-axis labels
     ylab("Normalized TVR counts tumor/control (log2)") +
@@ -231,7 +231,7 @@ if(!is.na(table_merged["TTAGGG", "Count_norm_by_intratel_reads_T"]) & !is.na(tab
 }
 
 
-remove = file.remove("Rplots.pdf")
+# remove = file.remove("Rplots.pdf")
 
 
 

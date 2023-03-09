@@ -19,6 +19,7 @@ RUN apt-get -yq update
 ENV TZ=America/Toronto
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
+# Add bionic-cran35 repo to install R 3.6
 RUN apt-get install -yq --no-install-recommends \
 software-properties-common \
 gpg-agent \
@@ -40,8 +41,8 @@ pkg-config \
 zlib1g-dev \
 libbz2-dev \
 liblzma-dev \
-#libcurl4-openssl-dev \
-libcurl4-gnutls-dev \
+libcurl4-openssl-dev \
+#libcurl4-gnutls-dev \
 libssl-dev \
 libxml2-dev \
 libssh2-1-dev \
@@ -50,12 +51,12 @@ libpcre3 \
 libpcre3-dev \
 libfontconfig1-dev \
 libcairo2-dev \
-libharfbuzz-dev \ 
-libfribidi-dev \
-libfreetype6-dev \
-libpng-dev \
-libtiff5-dev \
-libjpeg-dev \
+# libharfbuzz-dev \ 
+# libfribidi-dev \
+# libfreetype6-dev \
+# libpng-dev \
+# libtiff5-dev \
+# libjpeg-dev \
 wget \
 r-base \
 libncurses5-dev \
@@ -65,8 +66,8 @@ python-setuptools \
 python-dev
 
 RUN apt-get -yq update
-RUN apt-get install -yq --no-install-recommends \
-libcurl4-openssl-dev
+# RUN apt-get install -yq --no-install-recommends \
+# libcurl4-openssl-dev
 
 RUN locale-gen en_US.UTF-8
 RUN update-locale LANG=en_US.UTF-8
@@ -96,6 +97,7 @@ LABEL maintainer="lgalarno@gmail.com" \
       version="1.0" \
       description="telomerehunter docker MPU"
 
+# Add bionic-cran35 repo to install R 3.6
 RUN apt-get -yq update
 RUN apt-get install -yq --no-install-recommends \
 software-properties-common \
@@ -141,6 +143,7 @@ ENV R_LIBS_USER $R_LIBS
 #Setup the correct R libs directories
 RUN mkdir -p $MPU_OPT
 COPY --from=builder $MPU_OPT $MPU_OPT
+# TODO install telomerehunter as a local package instead of copying the fixed files
 ADD fix/telomerehunter /opt/mpu/lib/python2.7/site-packages/telomerehunter
 # ## USER CONFIGURATION
 RUN adduser --disabled-password --gecos '' ubuntu && chsh -s /bin/bash && mkdir -p /home/ubuntu

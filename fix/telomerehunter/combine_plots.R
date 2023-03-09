@@ -19,8 +19,9 @@
 # You should have received a copy of the GNU General Public License
 # along with TelomereHunter.  If not, see <http://www.gnu.org/licenses/>.
 
-library(cowplot, quietly=TRUE, warn.conflicts=FALSE)
 
+library(cowplot, quietly=TRUE, warn.conflicts=FALSE)
+library(ggplot2, quietly=TRUE, warn.conflicts=FALSE)
 
 # get commandline arguments
 commandArgs = commandArgs()
@@ -116,5 +117,5 @@ for (plot_type in plot_file_format){
   ggsave(paste0(main_path, "/", pid, "_telomerehunter_summary_plot.", plot_type), p_title, width=10, height=10)
 }
 
-remove = file.remove("Rplots.pdf")
+# remove = file.remove("Rplots.pdf")
 

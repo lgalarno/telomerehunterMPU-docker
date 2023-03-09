@@ -144,4 +144,4 @@ temp_dir = paste0(plot_dir, "/temp")
 if (!(file.exists(temp_dir))){dir.create(temp_dir, recursive=TRUE)}
 save(p_tel_content, col_repeat_types, file = paste0(temp_dir, "/", pid, "_plot_tel_content.rds"))
 
-remove = file.remove("Rplots.pdf")
+# remove = file.remove("Rplots.pdf")
