@@ -27,12 +27,13 @@ echo $INST_PATH
 INIT_DIR=`pwd`
 
 #TODO install telomerehunter as a local package instead of copying the fixed files
-pip install --prefix=$INST_PATH pysam==$VER_PYSAM PyPDF2==$VER_PYPDF2 telomerehunter==$VER_TELOMEREHUNTER
+# pip install --prefix=$INST_PATH pysam==$VER_PYSAM PyPDF2==$VER_PYPDF2 telomerehunter==$VER_TELOMEREHUNTER
+pip install --prefix=$INST_PATH /build/telomerehunter-1.1.1.tar.gz
 #
 # Check R is installed properly
 R --version
 
-# # Install samtools and hts-lib
+# Install samtools and hts-lib
 cd $INST_PATH
 wget https://github.com/samtools/htslib/releases/download/${VER_HTSLIB}/htslib-${VER_HTSLIB}.tar.bz2
 tar -vxjf htslib-${VER_HTSLIB}.tar.bz2

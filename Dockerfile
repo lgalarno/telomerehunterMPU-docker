@@ -85,6 +85,7 @@ RUN pip install --upgrade pip
 RUN pip install wheel cython
 
 # build tools from other repos
+COPY packages/telomerehunter-1.1.1.tar.gz build/
 COPY build/opt-build.sh build/
 COPY build/libInstall.R build/
 RUN bash build/opt-build.sh $OPT
@@ -143,8 +144,7 @@ ENV R_LIBS_USER $R_LIBS
 #Setup the correct R libs directories
 RUN mkdir -p $MPU_OPT
 COPY --from=builder $MPU_OPT $MPU_OPT
-# TODO install telomerehunter as a local package instead of copying the fixed files
-ADD fix/telomerehunter /opt/mpu/lib/python2.7/site-packages/telomerehunter
+# ADD fix/telomerehunter /opt/mpu/lib/python2.7/site-packages/telomerehunter
 # ## USER CONFIGURATION
 RUN adduser --disabled-password --gecos '' ubuntu && chsh -s /bin/bash && mkdir -p /home/ubuntu
 
