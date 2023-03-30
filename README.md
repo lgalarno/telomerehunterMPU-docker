@@ -33,7 +33,7 @@ You can build the images locally from this GitHub repository. Note that building
 
 * docker build -t telomerehunter .
 
-### Option 2: Singularity Installation for HPC
+### Option 3: Singularity Installation for HPC
 * singularity pull telomerehunter.sif docker://lgalarno/telomerehunter:latest
 
 ## Usage
